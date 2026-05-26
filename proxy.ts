@@ -8,7 +8,7 @@ export default auth((req) => {
 
   if (pathname.startsWith("/admin")) {
     if (!session) {
-      return NextResponse.redirect(new URL("/api/auth/signin", req.url));
+      return NextResponse.redirect(new URL("/auth/signin", req.url));
     }
     if (role === "CUSTOMER") {
       return NextResponse.redirect(new URL("/", req.url));
